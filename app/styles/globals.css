@@ -48,3 +48,108 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 } 
+
+.pikachu-swarm {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.pikachu-runner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 96px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: pikachu-run 10s linear infinite;
+}
+
+.pikachu-runner img {
+  width: 100%;
+  height: auto;
+}
+
+.pikachu-swarm .pikachu-runner:nth-child(1) { animation-delay: 0s; }
+.pikachu-swarm .pikachu-runner:nth-child(2) { animation-delay: -1s; }
+.pikachu-swarm .pikachu-runner:nth-child(3) { animation-delay: -2s; }
+.pikachu-swarm .pikachu-runner:nth-child(4) { animation-delay: -3s; }
+.pikachu-swarm .pikachu-runner:nth-child(5) { animation-delay: -4s; }
+.pikachu-swarm .pikachu-runner:nth-child(6) { animation-delay: -5s; }
+.pikachu-swarm .pikachu-runner:nth-child(7) { animation-delay: -6s; }
+.pikachu-swarm .pikachu-runner:nth-child(8) { animation-delay: -7s; }
+.pikachu-swarm .pikachu-runner:nth-child(9) { animation-delay: -8s; }
+.pikachu-swarm .pikachu-runner:nth-child(10) { animation-delay: -9s; }
+
+@keyframes pikachu-run {
+  0% {
+    /* bottom-left, just outside */
+    transform: translate(-96px, calc(100vh - 96px)) scaleX(1);
+  }
+  24% {
+    /* bottom-right */
+    transform: translate(calc(100vw - 96px), calc(100vh - 96px)) scaleX(1);
+  }
+  25% {
+    /* turn up the right wall and flip */
+    transform: translate(calc(100vw - 96px), calc(100vh - 96px)) scaleX(-1);
+  }
+  49% {
+    /* top-right */
+    transform: translate(calc(100vw - 96px), 0px) scaleX(-1);
+  }
+  50% {
+    /* run along the top towards left */
+    transform: translate(calc(100vw - 96px), 0px) scaleX(-1);
+  }
+  74% {
+    /* top-left */
+    transform: translate(-4px, 0px) scaleX(-1);
+  }
+  75% {
+    /* turn down the left wall and flip */
+    transform: translate(-4px, 0px) scaleX(1);
+  }
+  100% {
+    /* back to bottom-left */
+    transform: translate(-96px, calc(100vh - 96px)) scaleX(1);
+  }
+}
+
+.doodle-overlay-root {
+  position: fixed;
+  inset: 0;
+  z-index: 8000;
+}
+
+.doodle-overlay-canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
+.doodle-overlay-controls {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.25rem;
+  z-index: 10000;
+}
+
+.doodle-toggle,
+.doodle-tool {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid #111111;
+  background: #ffeb3b;
+  cursor: pointer;
+}
+
+.doodle-toggle-active {
+  background: #ff4081;
+  color: #ffffff;
+}

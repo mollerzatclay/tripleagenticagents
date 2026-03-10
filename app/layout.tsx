@@ -10,6 +10,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
+import { DoodleOverlay } from "./DoodleOverlay";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elizabeth's prototypes",
+  title: "Molly's prototypes",
   description: "The home for all my prototypes",
   icons: {
     icon: [
@@ -43,6 +44,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
+        <DoodleOverlay />
+        <div className="pikachu-swarm" aria-hidden="true">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <div key={index} className="pikachu-runner">
+              <img
+                src="/playground/pikachu-running.gif"
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
       </body>
     </html>
   );
