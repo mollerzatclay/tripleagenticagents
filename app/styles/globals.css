@@ -49,6 +49,8 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 } 
 
+/* Pikachu swarm styles kept for later use, but disabled by default */
+/*
 .pikachu-swarm {
   position: fixed;
   inset: 0;
@@ -85,38 +87,31 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes pikachu-run {
   0% {
-    /* bottom-left, just outside */
     transform: translate(-96px, calc(100vh - 96px)) scaleX(1);
   }
   24% {
-    /* bottom-right */
     transform: translate(calc(100vw - 96px), calc(100vh - 96px)) scaleX(1);
   }
   25% {
-    /* turn up the right wall and flip */
     transform: translate(calc(100vw - 96px), calc(100vh - 96px)) scaleX(-1);
   }
   49% {
-    /* top-right */
     transform: translate(calc(100vw - 96px), 0px) scaleX(-1);
   }
   50% {
-    /* run along the top towards left */
     transform: translate(calc(100vw - 96px), 0px) scaleX(-1);
   }
   74% {
-    /* top-left */
     transform: translate(-4px, 0px) scaleX(-1);
   }
   75% {
-    /* turn down the left wall and flip */
     transform: translate(-4px, 0px) scaleX(1);
   }
   100% {
-    /* back to bottom-left */
     transform: translate(-96px, calc(100vh - 96px)) scaleX(1);
   }
 }
+*/
 
 .doodle-overlay-root {
   position: fixed;

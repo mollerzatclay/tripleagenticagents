@@ -218,6 +218,11 @@ export default function Home() {
       description: 'An interactive button that creates a colorful confetti explosion',
       path: '/prototypes/confetti-button'
     },
+    {
+      title: 'Show tickets',
+      description: 'Buy tickets to a show: browse events, pick quantity, and complete a mock checkout',
+      path: '/prototypes/show-tickets'
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype',
@@ -239,9 +244,16 @@ export default function Home() {
           Hand-coded experiments beamed in from the edge of cyberspace.
         </p>
 
-        <marquee className={styles.marquee} behavior="scroll" direction="left" scrollamount="7">
-          ✨ WELCOME TO MOLLY&#39;S CORNER OF THE NET. BEST EXPERIENCED ON A CRT MONITOR. PLEASE SIGN THE GUESTBOOK IN YOUR HEART. ✨
-        </marquee>
+        <div className={styles.marqueeWrapper} aria-live="polite">
+          <div className={styles.marquee}>
+            <span className={styles.marqueeContent}>
+              ✨ WELCOME TO MOLLY&#39;S CORNER OF THE NET. BEST EXPERIENCED ON A CRT MONITOR. PLEASE SIGN THE GUESTBOOK IN YOUR HEART. ✨
+            </span>
+            <span className={styles.marqueeContent} aria-hidden="true">
+              ✨ WELCOME TO MOLLY&#39;S CORNER OF THE NET. BEST EXPERIENCED ON A CRT MONITOR. PLEASE SIGN THE GUESTBOOK IN YOUR HEART. ✨
+            </span>
+          </div>
+        </div>
       </header>
 
       <main className={styles.main}>

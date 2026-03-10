@@ -45,16 +45,6 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
         <DoodleOverlay />
-        <div className="pikachu-swarm" aria-hidden="true">
-          {Array.from({ length: 10 }).map((_, index) => (
-            <div key={index} className="pikachu-runner">
-              <img
-                src="/playground/pikachu-running.gif"
-                alt=""
-              />
-            </div>
-          ))}
-        </div>
       </body>
     </html>
   );
